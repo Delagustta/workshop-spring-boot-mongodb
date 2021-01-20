@@ -7,11 +7,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @Data
 @Document
-@EqualsAndHashCode
 @AllArgsConstructor
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
