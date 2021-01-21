@@ -28,11 +28,16 @@ public class UserService {
 		return repository.findById(id)
 				.orElseThrow(() -> new ObjectNotFoundException("Document not found"));
 	}
-	
+
 	public User insert(User obj) {
 		return repository.insert(obj);
 	}
-	
+
+	public void delete(String id) {
+		findById(id);
+		repository.deleteById(id);
+	}
+
 	public User fromDTO(UserDTO objDTO) {
 		return new User(objDTO.getId(), objDTO.getName(), objDTO.getEmail());
 	}
