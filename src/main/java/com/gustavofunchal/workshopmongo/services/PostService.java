@@ -29,4 +29,11 @@ public class PostService {
         .findById(id)
         .orElseThrow(() -> new ObjectNotFoundException("Document not found"));
   }
+
+  public List<Post> findByTitle(String text, boolean ignoreCase) {
+    if (ignoreCase) {
+      return repository.findByTitleContainingIgnoreCase(text);
+    }
+    return repository.findByTitleContaining(text);
+  }
 }
