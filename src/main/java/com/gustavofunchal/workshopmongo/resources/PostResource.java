@@ -35,7 +35,7 @@ public class PostResource {
       @RequestParam(value = "ignoreCase", required = false) boolean ignoreCase) {
 
     text = URL.decodeParam(text);
-    List<Post> list = service.findByTitle(text, ignoreCase);
+    List<Post> list = service.searchTitle(text);
 
     return ResponseEntity.ok().body(list);
   }

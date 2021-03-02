@@ -36,4 +36,8 @@ public class PostService {
     }
     return repository.findByTitleContaining(text);
   }
+
+  public List<Post> searchTitle(String text){
+    return repository.searchTitle(text);
+  }
 }
